@@ -1,0 +1,14 @@
+exclude_selectors:
+  - "span.katex"
+  - "span.katex-display"
+  - ".meta-icon"
+  - ".outline"
+  - ".footnote"
+
+# 确保 typst 内容能被正确索引
+force_language: "zh-cn"
+
+# 包含重要的选择器
+include_selectors:
+  - ".typst-content"
+  - ".markdown-content"

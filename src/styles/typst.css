@@ -1,0 +1,683 @@
+/* Typst content styling for fuwari theme */
+
+/* Typography */
+.typst-content {
+  color: rgb(55 65 81);
+  line-height: 1.625;
+}
+
+/* Dark mode text colors */
+.dark .typst-content {
+  color: rgb(229 231 235);
+}
+
+/* Dark mode text - but exclude admonitions and code blocks */
+.dark .typst-content p:not(.admonition p):not(pre p),
+.dark .typst-content div:not(.admonition div):not(pre div):not(.themed div),
+.dark .typst-content span:not(.admonition span):not(pre span):not(.themed span),
+.dark .typst-content li:not(.admonition li) {
+  color: rgb(229 231 235) !important;
+}
+
+/* Remove global dark mode text override that was interfering */
+/* .dark .typst-content p,
+.dark .typst-content div,
+.dark .typst-content span {
+  color: rgb(229 231 235) !important;
+} */
+
+.typst-content h1,
+.typst-content h2,
+.typst-content h3,
+.typst-content h4,
+.typst-content h5,
+.typst-content h6 {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* Ensure dark mode headings are visible */
+.dark .typst-content h1,
+.dark .typst-content h2,
+.dark .typst-content h3,
+.dark .typst-content h4,
+.dark .typst-content h5,
+.dark .typst-content h6 {
+  color: var(--primary) !important;
+}
+
+.typst-content h1 { 
+  font-size: 1.875rem; 
+  margin-bottom: 1.5rem; 
+  margin-top: 2rem; 
+}
+.typst-content h2 { 
+  font-size: 1.5rem; 
+  margin-bottom: 1rem; 
+  margin-top: 1.5rem; 
+}
+.typst-content h3 { 
+  font-size: 1.25rem; 
+  margin-bottom: 0.75rem; 
+  margin-top: 1.25rem; 
+}
+.typst-content h4 { 
+  font-size: 1.125rem; 
+  margin-bottom: 0.5rem; 
+  margin-top: 1rem; 
+}
+.typst-content h5 { 
+  font-size: 1rem; 
+  margin-bottom: 0.5rem; 
+  margin-top: 0.75rem; 
+}
+.typst-content h6 { 
+  font-size: 0.875rem; 
+  margin-bottom: 0.25rem; 
+  margin-top: 0.5rem; 
+}
+
+/* Links */
+.typst-content a {
+  color: var(--primary);
+  text-decoration: underline;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.typst-content a:hover {
+  opacity: 0.8;
+}
+
+.typst-content a:visited {
+  color: var(--primary);
+}
+
+/* Paragraphs */
+.typst-content p {
+  margin-bottom: 1rem;
+  line-height: 1.625;
+}
+
+/* Lists */
+.typst-content ul,
+.typst-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.typst-content li {
+  margin-bottom: 0.5rem;
+}
+
+.dark .typst-content li {
+  color: rgb(229 231 235) !important;
+}
+
+.typst-content ul > li {
+  list-style-type: disc;
+}
+
+.typst-content ol > li {
+  list-style-type: decimal;
+}
+
+/* Code blocks */
+.typst-content .themed {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background: var(--code-bg);
+}
+
+.typst-content .themed .dark {
+  display: none;
+}
+
+.typst-content .themed .light {
+  display: block;
+}
+
+.dark .typst-content .themed .dark {
+  display: block;
+}
+
+.dark .typst-content .themed .light {
+  display: none;
+}
+
+.typst-content pre {
+  padding: 1rem;
+  overflow-x: auto;
+  background: var(--code-bg);
+  color: var(--code-text);
+}
+
+.typst-content code {
+  font-family: 'JetBrains Mono Variable', 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.typst-content p code {
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  background: var(--inline-code-bg);
+  color: var(--inline-code-text);
+}
+
+/* Dark mode code block fixes */
+.dark .typst-content pre {
+  background: var(--codeblock-bg) !important;
+  color: #e2e8f0 !important; /* Light gray text for dark mode */
+}
+
+/* Fix themed code blocks in dark mode */
+.dark .typst-content .themed {
+  background: var(--codeblock-bg) !important;
+}
+
+/* Ensure syntax highlighting works properly */
+.dark .typst-content pre code,
+.dark .typst-content .themed code {
+  color: inherit !important;
+}
+
+/* Dark mode inline code */
+.dark .typst-content p code {
+  background: var(--inline-code-bg) !important;
+  color: var(--inline-code-color) !important;
+}
+
+/* Syntax highlighting colors for dark mode */
+.dark .typst-content pre .hljs-keyword,
+.dark .typst-content .themed .hljs-keyword {
+  color: #c792ea !important; /* Purple for keywords */
+}
+
+.dark .typst-content pre .hljs-string,
+.dark .typst-content .themed .hljs-string {
+  color: #c3e88d !important; /* Green for strings */
+}
+
+.dark .typst-content pre .hljs-comment,
+.dark .typst-content .themed .hljs-comment {
+  color: #546e7a !important; /* Gray for comments */
+}
+
+.dark .typst-content pre .hljs-number,
+.dark .typst-content .themed .hljs-number {
+  color: #f78c6c !important; /* Orange for numbers */
+}
+
+.dark .typst-content pre .hljs-function,
+.dark .typst-content .themed .hljs-function {
+  color: #82aaff !important; /* Blue for functions */
+}
+
+.dark .typst-content pre .hljs-title,
+.dark .typst-content .themed .hljs-title {
+  color: #ffcb6b !important; /* Yellow for titles */
+}
+
+.dark .typst-content pre .hljs-type,
+.dark .typst-content .themed .hljs-type {
+  color: #89ddff !important; /* Cyan for types */
+}
+
+.dark .typst-content pre .hljs-variable,
+.dark .typst-content .themed .hljs-variable {
+  color: #f07178 !important; /* Pink for variables */
+}
+
+/* Math equations */
+.typst-content .block-equation {
+  margin: 1rem 0;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.typst-content .inline-equation {
+  display: inline;
+  vertical-align: baseline;
+}
+
+.typst-content .block-equation .themed,
+.typst-content .inline-equation .themed {
+  display: inline-block;
+}
+
+/* 确保行间公式在所有情况下都居中 */
+.typst-content .block-equation svg,
+.typst-content .block-equation .themed svg {
+  display: block;
+  margin: 0 auto;
+}
+
+/* 确保行内公式不会换行 */
+.typst-content .inline-equation svg,
+.typst-content .inline-equation .themed svg {
+  display: inline;
+  vertical-align: middle;
+  margin: 0;
+}
+
+/* 修复行内公式的容器样式 */
+.typst-content span.inline-equation {
+  display: inline;
+  white-space: nowrap;
+}
+
+/* 修复行间公式的容器样式 */
+.typst-content p.block-equation {
+  text-align: center;
+  margin: 1rem 0;
+  display: block;
+}
+
+/* Ensure math is visible in dark mode */
+.dark .typst-content .block-equation,
+.dark .typst-content .inline-equation {
+  color: rgb(229 231 235) !important;
+}
+
+.dark .typst-content .block-equation *,
+.dark .typst-content .inline-equation * {
+  color: rgb(229 231 235) !important;
+}
+
+/* Tables */
+.typst-content table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+  border: 1px solid var(--border-color);
+}
+
+.typst-content th,
+.typst-content td {
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  color: inherit;
+}
+
+.dark .typst-content th,
+.dark .typst-content td {
+  color: rgb(229 231 235) !important;
+  border-color: rgb(75 85 99);
+}
+
+.typst-content th {
+  font-weight: bold;
+  background: var(--table-header-bg);
+}
+
+.dark .typst-content th {
+  background: rgb(55 65 81);
+}
+
+/* Blockquotes */
+.typst-content blockquote {
+  border-left: 4px solid var(--primary);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  background: var(--blockquote-bg);
+}
+
+.dark .typst-content blockquote {
+  color: rgb(229 231 235) !important;
+  background: rgb(31 41 55);
+}
+
+/* Typst Admonitions */
+.typst-content blockquote.admonition {
+  font-style: normal;
+  border-left: none;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  background: none;
+}
+
+.typst-content blockquote.admonition .bdm-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.typst-content blockquote.admonition .bdm-title::before {
+  content: '';
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  margin-right: 0.5rem;
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+}
+
+/* Note admonition */
+.typst-content blockquote.admonition.bdm-note {
+  background-color: rgb(239 246 255);
+  border-left: 4px solid rgb(59 130 246);
+}
+
+.dark .typst-content blockquote.admonition.bdm-note {
+  background-color: rgba(30 64 175, 0.3);
+  border-left-color: rgb(96 165 250);
+}
+
+.typst-content blockquote.admonition.bdm-note .bdm-title {
+  color: rgb(30 64 175);
+}
+
+.dark .typst-content blockquote.admonition.bdm-note .bdm-title {
+  color: rgb(147 197 253);
+}
+
+.typst-content blockquote.admonition.bdm-note .bdm-title::before {
+  background-color: rgb(37 99 235);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z'/%3E%3C/svg%3E");
+}
+
+.dark .typst-content blockquote.admonition.bdm-note .bdm-title::before {
+  background-color: rgb(96 165 250);
+}
+
+/* Tip admonition */
+.typst-content blockquote.admonition.bdm-tip {
+  background-color: rgb(240 253 244);
+  border-left: 4px solid rgb(34 197 94);
+}
+
+.dark .typst-content blockquote.admonition.bdm-tip {
+  background-color: rgba(21 128 61, 0.3);
+  border-left-color: rgb(74 222 128);
+}
+
+.typst-content blockquote.admonition.bdm-tip .bdm-title {
+  color: rgb(21 128 61);
+}
+
+.dark .typst-content blockquote.admonition.bdm-tip .bdm-title {
+  color: rgb(134 239 172);
+}
+
+.typst-content blockquote.admonition.bdm-tip .bdm-title::before {
+  background-color: rgb(22 163 74);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z'/%3E%3C/svg%3E");
+}
+
+.dark .typst-content blockquote.admonition.bdm-tip .bdm-title::before {
+  background-color: rgb(74 222 128);
+}
+
+/* Important admonition */
+.typst-content blockquote.admonition.bdm-important {
+  background-color: rgb(250 245 255);
+  border-left: 4px solid rgb(168 85 247);
+}
+
+.dark .typst-content blockquote.admonition.bdm-important {
+  background-color: rgba(124 58 237, 0.3);
+  border-left-color: rgb(196 181 253);
+}
+
+.typst-content blockquote.admonition.bdm-important .bdm-title {
+  color: rgb(124 58 237);
+}
+
+.dark .typst-content blockquote.admonition.bdm-important .bdm-title {
+  color: rgb(196 181 253);
+}
+
+.typst-content blockquote.admonition.bdm-important .bdm-title::before {
+  background-color: rgb(147 51 234);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z'/%3E%3C/svg%3E");
+}
+
+.dark .typst-content blockquote.admonition.bdm-important .bdm-title::before {
+  background-color: rgb(196 181 253);
+}
+
+/* Warning admonition */
+.typst-content blockquote.admonition.bdm-warning {
+  background-color: rgb(255 251 235);
+  border-left: 4px solid rgb(245 158 11);
+}
+
+.dark .typst-content blockquote.admonition.bdm-warning {
+  background-color: rgba(217 119 6, 0.3);
+  border-left-color: rgb(251 191 36);
+}
+
+.typst-content blockquote.admonition.bdm-warning .bdm-title {
+  color: rgb(146 64 14);
+}
+
+.dark .typst-content blockquote.admonition.bdm-warning .bdm-title {
+  color: rgb(253 186 116);
+}
+
+.typst-content blockquote.admonition.bdm-warning .bdm-title::before {
+  background-color: rgb(217 119 6);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z'/%3E%3C/svg%3E");
+}
+
+.dark .typst-content blockquote.admonition.bdm-warning .bdm-title::before {
+  background-color: rgb(251 191 36);
+}
+
+/* Caution admonition */
+.typst-content blockquote.admonition.bdm-caution {
+  background-color: rgb(254 242 242);
+  border-left: 4px solid rgb(239 68 68);
+}
+
+.dark .typst-content blockquote.admonition.bdm-caution {
+  background-color: rgba(220 38 38, 0.3);
+  border-left-color: rgb(248 113 113);
+}
+
+.typst-content blockquote.admonition.bdm-caution .bdm-title {
+  color: rgb(153 27 27);
+}
+
+.dark .typst-content blockquote.admonition.bdm-caution .bdm-title {
+  color: rgb(252 165 165);
+}
+
+.typst-content blockquote.admonition.bdm-caution .bdm-title::before {
+  background-color: rgb(220 38 38);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z'/%3E%3C/svg%3E");
+}
+
+.dark .typst-content blockquote.admonition.bdm-caution .bdm-title::before {
+  background-color: rgb(248 113 113);
+}
+
+/* Images */
+.typst-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Typst images with data attribute */
+.typst-content img[data-typst-image] {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  display: block;
+  cursor: zoom-in;
+}
+
+/* Center standalone images */
+.typst-content p > img[data-typst-image]:only-child {
+  margin: 1rem auto;
+  display: block;
+}
+
+/* Footnotes */
+.typst-content sup {
+  font-size: 0.75rem;
+}
+
+.typst-content sup a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* Horizontal rules */
+.typst-content hr {
+  margin: 1.5rem 0;
+  border: none;
+  height: 1px;
+  background: var(--border-color);
+}
+
+.dark .typst-content hr {
+  background: rgb(75 85 99);
+}
+
+/* Strong and emphasis */
+.typst-content strong {
+  font-weight: bold;
+}
+
+.typst-content em {
+  font-style: italic;
+}
+
+.dark .typst-content strong,
+.dark .typst-content em {
+  color: rgb(229 231 235) !important;
+}
+
+/* Dark mode admonition content - keep original colors for readability */
+.dark .typst-content blockquote.admonition p,
+.dark .typst-content blockquote.admonition div:not(.bdm-title),
+.dark .typst-content blockquote.admonition span:not(.bdm-title),
+.dark .typst-content blockquote.admonition li {
+  color: inherit !important; /* Inherit from parent admonition color */
+}
+
+/* Specific admonition text colors in dark mode */
+.dark .typst-content blockquote.admonition.bdm-note {
+  color: rgb(30 64 175) !important;
+}
+
+.dark .typst-content blockquote.admonition.bdm-tip {
+  color: rgb(21 128 61) !important;
+}
+
+.dark .typst-content blockquote.admonition.bdm-important {
+  color: rgb(124 58 237) !important;
+}
+
+.dark .typst-content blockquote.admonition.bdm-warning {
+  color: rgb(146 64 14) !important;
+}
+
+.dark .typst-content blockquote.admonition.bdm-caution {
+  color: rgb(153 27 27) !important;
+}
+
+/* 特别处理行内公式的主题切换 - 确保行内显示但保持主题切换逻辑 */
+.typst-content .themed .dark {
+  display: none;
+}
+
+.typst-content .themed .light {
+  display: block;
+}
+
+.dark .typst-content .themed .dark {
+  display: block;
+}
+
+.dark .typst-content .themed .light {
+  display: none;
+}
+
+/* 重写行内公式容器的主题切换规则 - 使用 inline 而不是 block */
+.typst-content .themed:has(.inline-equation) .dark {
+  display: none;
+}
+
+.typst-content .themed:has(.inline-equation) .light {
+  display: inline;
+}
+
+.dark .typst-content .themed:has(.inline-equation) .dark {
+  display: inline;
+}
+
+.dark .typst-content .themed:has(.inline-equation) .light {
+  display: none;
+}
+
+/* 修复行内代码的主题切换 - 确保行内代码不换行 */
+.typst-content span .light,
+.typst-content span .dark {
+  display: inline;
+}
+
+.typst-content span .dark {
+  display: none;
+}
+
+.typst-content span .light {
+  display: inline;
+}
+
+.dark .typst-content span .dark {
+  display: inline;
+}
+
+.dark .typst-content span .light {
+  display: none;
+}
+
+/* 特别针对包含行内代码的span元素 */
+.typst-content span:has(code) .light,
+.typst-content span:has(code) .dark {
+  display: inline !important;
+}
+
+.typst-content span:has(code) .dark {
+  display: none !important;
+}
+
+.typst-content span:has(code) .light {
+  display: inline !important;
+}
+
+.dark .typst-content span:has(code) .dark {
+  display: inline !important;
+}
+
+.dark .typst-content span:has(code) .light {
+  display: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .typst-content {
+    font-size: 0.875rem;
+  }
+  
+  .typst-content h1 { font-size: 1.5rem; }
+  .typst-content h2 { font-size: 1.25rem; }
+  .typst-content h3 { font-size: 1.125rem; }
+  
+  .typst-content pre {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+}
