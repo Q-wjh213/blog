@@ -3,7 +3,7 @@
 /* Typography */
 .typst-content {
   color: rgb(55 65 81);
-  line-height: 1.625;
+  line-height: 2.4375; /* 原来的 1.625 × 1.5 = 2.4375 */
 }
 
 /* Dark mode text colors */
@@ -96,7 +96,7 @@
 /* Paragraphs */
 .typst-content p {
   margin-bottom: 1rem;
-  line-height: 1.625;
+  line-height: 2.4375; /* 原来的 1.625 × 1.5 = 2.4375 */
 }
 
 /* Lists */
@@ -128,6 +128,7 @@
   overflow: hidden;
   margin-bottom: 1rem;
   background: var(--code-bg);
+  line-height: 1.4; /* 为代码块设置合适的行间距 */
 }
 
 .typst-content .themed .dark {
@@ -151,10 +152,12 @@
   overflow-x: auto;
   background: var(--code-bg);
   color: var(--code-text);
+  line-height: 1.4; /* 为代码块设置合适的行间距 */
 }
 
 .typst-content code {
   font-family: 'JetBrains Mono Variable', 'JetBrains Mono', 'Fira Code', monospace;
+  line-height: 1.4; /* 为所有代码元素设置合适的行间距 */
 }
 
 .typst-content p code {
@@ -567,25 +570,71 @@
   color: inherit !important; /* Inherit from parent admonition color */
 }
 
-/* Specific admonition text colors in dark mode */
-.dark .typst-content blockquote.admonition.bdm-note {
-  color: rgb(30 64 175) !important;
+/* Admonition 内的行内代码样式 */
+.typst-content blockquote.admonition code {
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  background: rgba(0, 0, 0, 0.1);
+  color: inherit;
+  font-family: 'JetBrains Mono Variable', 'JetBrains Mono', 'Fira Code', monospace;
 }
 
-.dark .typst-content blockquote.admonition.bdm-tip {
-  color: rgb(21 128 61) !important;
+/* Dark mode admonition 内的行内代码 */
+.dark .typst-content blockquote.admonition code {
+  background: rgba(255, 255, 255, 0.15);
+  color: inherit;
 }
 
-.dark .typst-content blockquote.admonition.bdm-important {
-  color: rgb(124 58 237) !important;
+/* 针对不同类型的 admonition 设置行内代码背景色 */
+.typst-content blockquote.admonition.bdm-note code {
+  background: rgba(59, 130, 246, 0.2);
+  color: rgb(30 64 175);
 }
 
-.dark .typst-content blockquote.admonition.bdm-warning {
-  color: rgb(146 64 14) !important;
+.dark .typst-content blockquote.admonition.bdm-note code {
+  background: rgba(96, 165, 250, 0.2);
+  color: rgb(147 197 253);
 }
 
-.dark .typst-content blockquote.admonition.bdm-caution {
-  color: rgb(153 27 27) !important;
+.typst-content blockquote.admonition.bdm-tip code {
+  background: rgba(34, 197, 94, 0.2);
+  color: rgb(21 128 61);
+}
+
+.dark .typst-content blockquote.admonition.bdm-tip code {
+  background: rgba(74, 222, 128, 0.2);
+  color: rgb(134 239 172);
+}
+
+.typst-content blockquote.admonition.bdm-important code {
+  background: rgba(168, 85, 247, 0.2);
+  color: rgb(124 58 237);
+}
+
+.dark .typst-content blockquote.admonition.bdm-important code {
+  background: rgba(196, 181, 253, 0.2);
+  color: rgb(196 181 253);
+}
+
+.typst-content blockquote.admonition.bdm-warning code {
+  background: rgba(245, 158, 11, 0.2);
+  color: rgb(146 64 14);
+}
+
+.dark .typst-content blockquote.admonition.bdm-warning code {
+  background: rgba(251, 191, 36, 0.2);
+  color: rgb(253 186 116);
+}
+
+.typst-content blockquote.admonition.bdm-caution code {
+  background: rgba(239, 68, 68, 0.2);
+  color: rgb(153 27 27);
+}
+
+.dark .typst-content blockquote.admonition.bdm-caution code {
+  background: rgba(248, 113, 113, 0.2);
+  color: rgb(252 165 165);
 }
 
 /* 特别处理行内公式的主题切换 - 确保行内显示但保持主题切换逻辑 */
@@ -680,4 +729,17 @@
     padding: 0.5rem;
     font-size: 0.875rem;
   }
+}
+
+/* 确保代码块内的所有元素都使用紧凑的行间距 */
+.typst-content pre *,
+.typst-content .themed * {
+  line-height: 1.4 !important;
+}
+
+/* 代码块内的段落也应该使用紧凑行间距 */
+.typst-content pre p,
+.typst-content .themed p {
+  line-height: 1.4 !important;
+  margin-bottom: 0;
 }
