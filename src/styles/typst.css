@@ -562,12 +562,68 @@
   color: rgb(229 231 235) !important;
 }
 
-/* Dark mode admonition content - keep original colors for readability */
+/* Dark mode admonition content - 修正文本颜色 */
 .dark .typst-content blockquote.admonition p,
 .dark .typst-content blockquote.admonition div:not(.bdm-title),
 .dark .typst-content blockquote.admonition span:not(.bdm-title),
 .dark .typst-content blockquote.admonition li {
   color: inherit !important; /* Inherit from parent admonition color */
+}
+
+/* 针对不同类型的 admonition 在暗黑模式下设置正确的文本颜色 */
+.dark .typst-content blockquote.admonition.bdm-note {
+  color: rgb(147 197 253) !important; /* 浅蓝色 */
+}
+
+.dark .typst-content blockquote.admonition.bdm-note p,
+.dark .typst-content blockquote.admonition.bdm-note div:not(.bdm-title),
+.dark .typst-content blockquote.admonition.bdm-note span:not(.bdm-title),
+.dark .typst-content blockquote.admonition.bdm-note li {
+  color: rgb(147 197 253) !important;
+}
+
+.dark .typst-content blockquote.admonition.bdm-tip {
+  color: rgb(134 239 172) !important; /* 浅绿色 */
+}
+
+.dark .typst-content blockquote.admonition.bdm-tip p,
+.dark .typst-content blockquote.admonition.bdm-tip div:not(.bdm-title),
+.dark .typst-content blockquote.admonition.bdm-tip span:not(.bdm-title),
+.dark .typst-content blockquote.admonition.bdm-tip li {
+  color: rgb(134 239 172) !important;
+}
+
+.dark .typst-content blockquote.admonition.bdm-important {
+  color: rgb(196 181 253) !important; /* 浅紫色 */
+}
+
+.dark .typst-content blockquote.admonition.bdm-important p,
+.dark .typst-content blockquote.admonition.bdm-important div:not(.bdm-title),
+.dark .typst-content blockquote.admonition.bdm-important span:not(.bdm-title),
+.dark .typst-content blockquote.admonition.bdm-important li {
+  color: rgb(196 181 253) !important;
+}
+
+.dark .typst-content blockquote.admonition.bdm-warning {
+  color: rgb(253 186 116) !important; /* 浅橙色 */
+}
+
+.dark .typst-content blockquote.admonition.bdm-warning p,
+.dark .typst-content blockquote.admonition.bdm-warning div:not(.bdm-title),
+.dark .typst-content blockquote.admonition.bdm-warning span:not(.bdm-title),
+.dark .typst-content blockquote.admonition.bdm-warning li {
+  color: rgb(253 186 116) !important;
+}
+
+.dark .typst-content blockquote.admonition.bdm-caution {
+  color: rgb(252 165 165) !important; /* 浅红色 */
+}
+
+.dark .typst-content blockquote.admonition.bdm-caution p,
+.dark .typst-content blockquote.admonition.bdm-caution div:not(.bdm-title),
+.dark .typst-content blockquote.admonition.bdm-caution span:not(.bdm-title),
+.dark .typst-content blockquote.admonition.bdm-caution li {
+  color: rgb(252 165 165) !important;
 }
 
 /* Admonition 内的行内代码样式 */
