@@ -3,7 +3,7 @@
 title: [画图 题解],
 desc: [],
 date: "2025-06-03",
-tags: ("cdq分治",),
+tags: ("cdq 分治",),
 category: "题解",
 draft: false,
 )

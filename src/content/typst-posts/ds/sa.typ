@@ -1,9 +1,9 @@
 #import "/typ/templates/blog.typ": main, note, tip, important, warning, caution, image
 #show: main.with(
-title: [后缀树组 SA],
+title: [后缀数组 SA],
 desc: [],
 date: "2025-06-03",
-tags: ("后缀树组",),
+tags: ("后缀数组",),
 category: "数据结构",
 draft: false,
 )
